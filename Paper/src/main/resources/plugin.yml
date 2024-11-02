@@ -1,0 +1,7 @@
+name: QuickShopLight
+version: '0.1.0.0'
+main: net.tnemc.quickShopLight.QuickShopLight
+api-version: '1.21'
+authors: [ creatorfromhell ]
+description: A template for a TNE Module.
+website: https://tnemc.net
