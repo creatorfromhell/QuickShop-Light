@@ -16,6 +16,7 @@
         <module>Paper</module>
         <module>Folia</module>
         <module>Sponge</module>
+        <module>API</module>
     </modules>
 
     <properties>
