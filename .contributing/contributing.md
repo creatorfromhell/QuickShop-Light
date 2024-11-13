@@ -1,6 +1,6 @@
-# Contributing to QuickShop-Hikari
+# Contributing to QuickShop-Light
 
-We welcome contributions to QuickShop-Hikari and appreciate your efforts to improve the project! Before getting started, please take a moment to review these guidelines to help streamline the process and ensure consistency across contributions.
+We welcome contributions to QuickShop-Light and appreciate your efforts to improve the project! Before getting started, please take a moment to review these guidelines to help streamline the process and ensure consistency across contributions.
 
 ## Project Structure
 
