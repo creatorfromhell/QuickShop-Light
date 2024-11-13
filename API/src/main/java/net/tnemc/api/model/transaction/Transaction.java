@@ -17,6 +17,8 @@ package net.tnemc.api.model.transaction;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.UUID;
 
 /**
@@ -32,21 +34,21 @@ public interface Transaction {
    *
    * @return a UUID object representing the identifier for the transaction.
    */
-  UUID identifier();
+  @NotNull UUID identifier();
 
   /**
    * Get the type of the transaction.
    *
    * @return the type of the transaction as a string.
    */
-  String type();
+  @NotNull String type();
 
   /**
    * Get the player UUID associated with this transaction.
    *
    * @return the player UUID as a UUID object.
    */
-  UUID player();
+  @NotNull UUID player();
 
   /**
    * Get the amount associated with this transaction.

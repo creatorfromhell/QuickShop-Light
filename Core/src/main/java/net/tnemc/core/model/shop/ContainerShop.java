@@ -20,6 +20,7 @@ package net.tnemc.core.model.shop;
 import net.tnemc.api.model.history.HistoryEntry;
 import net.tnemc.api.model.location.SerializableLocation;
 import net.tnemc.api.model.shop.Shop;
+import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -61,7 +62,7 @@ public class ContainerShop implements Shop {
    * @return a UUID representing the identifier of the shop.
    */
   @Override
-  public UUID identifier() {
+  public @NotNull UUID identifier() {
 
     return identifier;
   }
@@ -72,7 +73,7 @@ public class ContainerShop implements Shop {
    * @return the price of the item as a BigDecimal.
    */
   @Override
-  public BigDecimal price() {
+  public @NotNull BigDecimal price() {
 
     return price;
   }
@@ -83,7 +84,7 @@ public class ContainerShop implements Shop {
    * @param price the new price of the item
    */
   @Override
-  public void setPrice(final BigDecimal price) {
+  public void setPrice(final @NotNull BigDecimal price) {
 
     this.price = price;
   }
@@ -105,7 +106,7 @@ public class ContainerShop implements Shop {
    * @param entry the history entry to be added
    */
   @Override
-  public void addEntry(final HistoryEntry entry) {
+  public void addEntry(final @NotNull HistoryEntry entry) {
     history.add(entry);
   }
 }

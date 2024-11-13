@@ -17,6 +17,8 @@ package net.tnemc.api.model.history;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 /**
@@ -40,5 +42,5 @@ public interface HistoryKeeper {
    *
    * @param entry the history entry to be added
    */
-  void addEntry(HistoryEntry entry);
+  void addEntry(@NotNull final HistoryEntry entry);
 }

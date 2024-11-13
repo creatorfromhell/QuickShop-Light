@@ -18,6 +18,7 @@ package net.tnemc.api.model.shop;
  */
 
 import net.tnemc.api.model.history.HistoryKeeper;
+import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
 import java.util.UUID;
@@ -35,19 +36,19 @@ public interface Shop extends HistoryKeeper {
    *
    * @return a UUID representing the identifier of the shop.
    */
-  UUID identifier();
+  @NotNull UUID identifier();
 
   /**
    * Retrieves the price of the item.
    *
    * @return the price of the item as a BigDecimal.
    */
-  BigDecimal price();
+  @NotNull BigDecimal price();
 
   /**
    * Sets the price of the item in the shop.
    *
    * @param price the new price of the item
    */
-  void setPrice(BigDecimal price);
+  void setPrice(@NotNull final BigDecimal price);
 }
