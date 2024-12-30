@@ -16,6 +16,16 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <repositories>
+
+        <repository>
+            <id>codemc-releases</id>
+            <url>https://repo.codemc.io/repository/maven-public/</url>
+        </repository>
+
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.jetbrains</groupId>
@@ -23,6 +33,11 @@
             <version>24.0.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>net.tnemc</groupId>
+            <artifactId>TNPC-Core</artifactId>
+            <version>${tnpc.version}</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
-
 </project>

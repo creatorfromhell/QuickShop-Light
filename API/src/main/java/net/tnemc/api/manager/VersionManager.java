@@ -1,4 +1,4 @@
-package net.tnemc.api.model.shop.sign;
+package net.tnemc.api.manager;
 /*
  * QuickShop-Light
  * Copyright (C) 2024 Daniel "creatorfromhell" Vidmar
@@ -17,36 +17,30 @@ package net.tnemc.api.model.shop.sign;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import net.tnemc.item.SerialItem;
+import net.tnemc.api.model.version.Version;
+
+import java.util.Map;
 
 /**
- * SignParser
+ * VersionManager
  *
  * @author creatorfromhell
  * @since 0.0.1.0
  */
-public interface SignParser {
+public interface VersionManager {
 
   /**
-   * This method returns the identifier associated with a given SignParser implementation.
+   * Retrieves a map of software versions.
    *
-   * @return The identifier of the SignParser.
+   * @return A map where the keys are version identifiers and the values are Version objects representing each software version.
    */
-  String identifier();
+  Map<String, Version> versions();
 
   /**
-   * Checks if the given ItemStack item meets certain criteria for this parser to be applicable.
+   * Check if a given version is supported by the software.
    *
-   * @param item The ItemStack item to be checked.
-   * @return true if the criteria is met, false otherwise.
+   * @param version the version to be checked for support
+   * @return true if the version is supported, false otherwise
    */
-  boolean applies(final SerialItem<?> item);
-
-  /**
-   * Parses a given ItemStack item into a Component for display on a shop sign.
-   *
-   * @param item The ItemStack item to be parsed into a Component.
-   * @return The parsed String representing the given ItemStack item.
-   */
-  String parse(final SerialItem<?> item);
+  boolean isSupported(final String version);
 }

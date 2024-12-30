@@ -1,4 +1,4 @@
-package net.tnemc.api.model.shop.sign;
+package net.tnemc.api.model.shop.display;
 /*
  * QuickShop-Light
  * Copyright (C) 2024 Daniel "creatorfromhell" Vidmar
@@ -17,36 +17,39 @@ package net.tnemc.api.model.shop.sign;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import net.tnemc.item.SerialItem;
+import net.tnemc.api.model.shop.Shop;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
- * SignParser
+ * DisplayProvider
+ *
+ * @param <T> The implementation's plugin/mod object.
  *
  * @author creatorfromhell
  * @since 0.0.1.0
  */
-public interface SignParser {
+public interface DisplayProvider<T> {
 
   /**
-   * This method returns the identifier associated with a given SignParser implementation.
+   * Retrieves the identifier for the implementation.
    *
-   * @return The identifier of the SignParser.
+   * @return a String representing the identifier
    */
-  String identifier();
+  @NotNull String identifier();
 
   /**
-   * Checks if the given ItemStack item meets certain criteria for this parser to be applicable.
+   * Retrieves the provider associated with this DisplayProvider.
    *
-   * @param item The ItemStack item to be checked.
-   * @return true if the criteria is met, false otherwise.
+   * @return The implementation's plugin/mod object.
    */
-  boolean applies(final SerialItem<?> item);
+  @NotNull T getProvider();
 
   /**
-   * Parses a given ItemStack item into a Component for display on a shop sign.
+   * Provides a DisplayItem based on the given Shop.
    *
-   * @param item The ItemStack item to be parsed into a Component.
-   * @return The parsed String representing the given ItemStack item.
+   * @param shop the Shop object to use for providing the DisplayItem
+   * @return the DisplayItem generated based on the provided Shop, or null if unable to provide
    */
-  String parse(final SerialItem<?> item);
+  @Nullable DisplayItem provide(@NotNull Shop shop);
 }

@@ -1,4 +1,4 @@
-package net.tnemc.api.model.shop.sign;
+package net.tnemc.api.model.version;
 /*
  * QuickShop-Light
  * Copyright (C) 2024 Daniel "creatorfromhell" Vidmar
@@ -17,36 +17,29 @@ package net.tnemc.api.model.shop.sign;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import net.tnemc.item.SerialItem;
+import net.tnemc.api.model.location.SerializableLocation;
+import org.jetbrains.annotations.NotNull;
 
 /**
- * SignParser
+ * Version
  *
  * @author creatorfromhell
  * @since 0.0.1.0
  */
-public interface SignParser {
+public interface Version {
 
   /**
-   * This method returns the identifier associated with a given SignParser implementation.
+   * Retrieves the version of the software.
    *
-   * @return The identifier of the SignParser.
+   * @return A non-null String representing the version of the software.
    */
-  String identifier();
+  @NotNull String version();
 
   /**
-   * Checks if the given ItemStack item meets certain criteria for this parser to be applicable.
+   * Spawns a virtual display at the specified location.
    *
-   * @param item The ItemStack item to be checked.
-   * @return true if the criteria is met, false otherwise.
+   * @param location The SerializableLocation object representing the location where the virtual display should be spawned.
+   * @return true if the virtual display was successfully spawned, false otherwise.
    */
-  boolean applies(final SerialItem<?> item);
-
-  /**
-   * Parses a given ItemStack item into a Component for display on a shop sign.
-   *
-   * @param item The ItemStack item to be parsed into a Component.
-   * @return The parsed String representing the given ItemStack item.
-   */
-  String parse(final SerialItem<?> item);
+  boolean spawnVirtualDisplay(@NotNull SerializableLocation location);
 }

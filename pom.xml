@@ -20,6 +20,9 @@
     </modules>
 
     <properties>
+        <tnml.version>1.5.0.1-SNAPSHOT-19</tnml.version>
+        <tnpc.version>1.0.0.2-Pre-17</tnpc.version>
+        <qs.relocation>net.tnemc.qs.libs</qs.relocation>
         <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>

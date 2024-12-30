@@ -39,11 +39,13 @@ public class ContainerShop implements Shop {
 
   protected final UUID identifier;
   protected final SerializableLocation location;
+  protected final SerializableLocation signLocation;
   protected BigDecimal price;
 
-  public ContainerShop(final UUID identifier, final SerializableLocation location) {
+  public ContainerShop(final UUID identifier, final SerializableLocation location, final SerializableLocation signLocation, final BigDecimal price) {
     this.identifier = identifier;
     this.location = location;
+    this.signLocation = signLocation;
   }
 
   /**
@@ -54,6 +56,11 @@ public class ContainerShop implements Shop {
   public SerializableLocation location() {
 
     return location;
+  }
+
+  public SerializableLocation getSignLocation() {
+
+    return signLocation;
   }
 
   /**

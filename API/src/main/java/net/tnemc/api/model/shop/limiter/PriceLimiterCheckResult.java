@@ -1,4 +1,4 @@
-package net.tnemc.api.model.shop.sign;
+package net.tnemc.api.model.shop.limiter;
 /*
  * QuickShop-Light
  * Copyright (C) 2024 Daniel "creatorfromhell" Vidmar
@@ -17,36 +17,43 @@ package net.tnemc.api.model.shop.sign;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import net.tnemc.item.SerialItem;
+import java.math.BigDecimal;
 
 /**
- * SignParser
+ * PriceLimiterCheck
  *
  * @author creatorfromhell
  * @since 0.0.1.0
  */
-public interface SignParser {
+public interface PriceLimiterCheckResult {
 
   /**
-   * This method returns the identifier associated with a given SignParser implementation.
+   * Retrieves the maximum price allowed for this item.
    *
-   * @return The identifier of the SignParser.
+   * @return the maximum value as a BigDecimal
    */
-  String identifier();
+  BigDecimal max();
 
   /**
-   * Checks if the given ItemStack item meets certain criteria for this parser to be applicable.
+   * Retrieves the minimum price allowed for this item.
    *
-   * @param item The ItemStack item to be checked.
-   * @return true if the criteria is met, false otherwise.
+   * @return the minimum value as a BigDecimal
    */
-  boolean applies(final SerialItem<?> item);
+  BigDecimal min();
 
   /**
-   * Parses a given ItemStack item into a Component for display on a shop sign.
+   * Retrieves the result of the price limiting operation.
    *
-   * @param item The ItemStack item to be parsed into a Component.
-   * @return The parsed String representing the given ItemStack item.
+   * @return the result of the price limiting operation as a PriceLimiterResult enum value
    */
-  String parse(final SerialItem<?> item);
+  PriceLimiterResult result();
+
+  enum PriceLimiterResult {
+    PASS,
+    REACHED_PRICE_MAX_LIMIT,
+    REACHED_PRICE_MIN_LIMIT,
+    PRICE_RESTRICTED,
+    NOT_A_WHOLE_NUMBER,
+    NOT_VALID
+  }
 }
