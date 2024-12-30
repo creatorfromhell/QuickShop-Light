@@ -9,22 +9,23 @@
   <packaging>jar</packaging>
 
   <name>core</name>
-    <dependencies>
-        <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>24.0.0</version>
-            <scope>compile</scope>
-        </dependency>
-      <dependency>
-        <groupId>net.tnemc</groupId>
-        <artifactId>API</artifactId>
-        <version>0.1.0.0</version>
-        <scope>compile</scope>
-      </dependency>
-    </dependencies>
 
-    <parent>
+  <dependencies>
+    <dependency>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations</artifactId>
+      <version>24.0.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>net.tnemc</groupId>
+      <artifactId>API</artifactId>
+      <version>0.1.0.0</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+
+  <parent>
     <groupId>net.tnemc</groupId>
     <artifactId>quickshoplight</artifactId>
     <version>0.1.0.0</version>

@@ -23,6 +23,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -32,6 +34,20 @@ import java.util.UUID;
  * @since 0.0.1.0
  */
 public interface Shop extends HistoryKeeper {
+
+  /**
+   * Retrieves the tags associated with a shop.
+   *
+   * @return a List of String objects representing the tags of the shop.
+   */
+  List<String> tags();
+
+  /**
+   * Retrieves the functionality information of this object.
+   *
+   * @return a Map where keys are String descriptions and values are Boolean flags indicating the functionality status.
+   */
+  Map<String, Boolean> functionality();
 
   /**
    * Retrieves the identifier for the shop.

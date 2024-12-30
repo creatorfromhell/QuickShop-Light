@@ -19,11 +19,6 @@
 
     <repositories>
 
-        <repository>
-            <id>codemc-releases</id>
-            <url>https://repo.codemc.io/repository/maven-public/</url>
-        </repository>
-
     </repositories>
 
     <dependencies>
@@ -31,12 +26,6 @@
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>24.0.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.tnemc</groupId>
-            <artifactId>TNPC-Core</artifactId>
-            <version>${tnpc.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

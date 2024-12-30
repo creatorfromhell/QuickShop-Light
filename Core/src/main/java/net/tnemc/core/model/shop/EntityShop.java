@@ -19,11 +19,15 @@ package net.tnemc.core.model.shop;
 
 import net.tnemc.api.model.history.HistoryEntry;
 import net.tnemc.api.model.shop.Shop;
+import net.tnemc.item.SerialItem;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -34,15 +38,23 @@ import java.util.UUID;
  */
 public class EntityShop implements Shop {
 
+  protected final Map<String, Boolean> functionality = new HashMap<>();
+
   protected final List<HistoryEntry> history = new ArrayList<>();
+  protected final List<String> tags = new ArrayList<>();
 
   protected final UUID identifier;
   protected final UUID entity;
   protected BigDecimal price;
+  protected String currency;
+  protected SerialItem<?> item;
 
-  public EntityShop(final UUID identifier, final  UUID entity) {
+  public EntityShop(final UUID identifier, final  UUID entity, final String currency,
+                    final SerialItem<?> item) {
     this.identifier = identifier;
     this.entity = entity;
+    this.currency = currency;
+    this.item = item;
   }
 
   /**
@@ -56,6 +68,29 @@ public class EntityShop implements Shop {
   }
 
   /**
+   * Retrieves the tags associated with a shop.
+   *
+   * @return a List of String objects representing the tags of the shop.
+   */
+  @Override
+  public List<String> tags() {
+
+    return tags;
+  }
+
+  /**
+   * Retrieves the functionality information of this object.
+   *
+   * @return a Map where keys are String descriptions and values are Boolean flags indicating the
+   * functionality status.
+   */
+  @Override
+  public Map<String, Boolean> functionality() {
+
+    return functionality;
+  }
+
+  /**
    * Retrieves the identifier for the shop.
    *
    * @return a UUID representing the identifier of the shop.
@@ -64,6 +99,27 @@ public class EntityShop implements Shop {
   public @NotNull UUID identifier() {
 
     return identifier;
+  }
+
+  /**
+   * Retrieves the currency used by this shop.
+   *
+   * @return the currency as a String, or null if no currency is set
+   */
+  @Override
+  public @Nullable String currency() {
+
+    return currency;
+  }
+
+  /**
+   * Sets the currency used by this shop.
+   *
+   * @param currency the new currency to be set, or null if no currency is to be set
+   */
+  @Override
+  public void setCurrency(@Nullable final String currency) {
+    this.currency = currency;
   }
 
   /**
@@ -86,6 +142,27 @@ public class EntityShop implements Shop {
   public void setPrice(final @NotNull BigDecimal price) {
 
     this.price = price;
+  }
+
+  /**
+   * Retrieves the item associated with the shop as a SerialItem.
+   *
+   * @return the item associated with the shop as a SerialItem
+   */
+  @Override
+  public SerialItem<?> item() {
+
+    return item;
+  }
+
+  /**
+   * Sets the item in the shop to the provided item.
+   *
+   * @param item the SerialItem to be set in the shop
+   */
+  @Override
+  public void setItem(final @NotNull SerialItem<?> item) {
+    this.item = item;
   }
 
   /**
