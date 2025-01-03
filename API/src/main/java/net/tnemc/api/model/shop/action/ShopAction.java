@@ -3,7 +3,7 @@ package net.tnemc.api.model.shop.action;
  * QuickShop-Light
  * Copyright (C) 2024 Daniel "creatorfromhell" Vidmar
  *
- * This program is free software: you can redistribute it and/or modify
+A * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -38,6 +38,13 @@ public interface ShopAction {
   @NotNull String identifier();
 
   /**
+   * Returns an identifier that correlates with a player-driven action on a shop. Such as RIGHT_CLICK
+   *
+   * @return A non-null string representing the interaction action.
+   */
+  @NotNull String interactAction();
+
+  /**
    * Checks if this method applies to the given shop based on certain criteria.
    *
    * @param shop the shop to check if the method applies to
@@ -54,5 +61,6 @@ public interface ShopAction {
    * @param amount   the amount associated with the action
    * @return true if the action is successfully performed, false otherwise
    */
-  boolean perform(@NotNull PlayerProvider player, @NotNull EconomyConnector economy, @NotNull Shop shop, final int amount);
+  boolean perform(@NotNull PlayerProvider player, @NotNull EconomyConnector economy,
+                  @NotNull Shop shop, final int amount);
 }
