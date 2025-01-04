@@ -1,4 +1,4 @@
-package net.tnemc.api.model.shop.sign;
+package net.tnemc.api.model.shop.item;
 /*
  * QuickShop-Light
  * Copyright (C) 2024 Daniel "creatorfromhell" Vidmar
@@ -20,15 +20,15 @@ package net.tnemc.api.model.shop.sign;
 import net.tnemc.item.SerialItem;
 
 /**
- * SignParser
+ * ItemParser
  *
  * @author creatorfromhell
  * @since 0.0.1.0
  */
-public interface SignParser {
+public interface ItemParser {
 
   /**
-   * This method returns the identifier associated with a given SignParser implementation.
+   * This method returns the identifier associated with a given ItemParser implementation.
    *
    * @return The identifier of the SignParser.
    */

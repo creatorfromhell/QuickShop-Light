@@ -21,11 +21,10 @@ import net.tnemc.api.connector.EconomyConnector;
 import net.tnemc.api.model.location.SerializableLocation;
 import net.tnemc.api.model.shop.Shop;
 import net.tnemc.api.model.shop.limiter.PriceLimiter;
-import net.tnemc.api.model.shop.sign.SignParser;
+import net.tnemc.api.model.shop.item.ItemParser;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -44,7 +43,7 @@ public interface ShopManager {
    *
    * @return a Map of String keys to SignParser values representing the parsers.
    */
-  Map<String, SignParser> parsers();
+  Map<String, ItemParser> parsers();
 
   /**
    * Retrieves a map of shops by their unique identifiers.

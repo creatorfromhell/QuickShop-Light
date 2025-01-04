@@ -22,7 +22,7 @@ import net.tnemc.api.manager.ShopManager;
 import net.tnemc.api.model.location.SerializableLocation;
 import net.tnemc.api.model.shop.Shop;
 import net.tnemc.api.model.shop.limiter.PriceLimiter;
-import net.tnemc.api.model.shop.sign.SignParser;
+import net.tnemc.api.model.shop.item.ItemParser;
 import net.tnemc.core.model.shop.ContainerShop;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -42,7 +42,7 @@ import java.util.stream.Collectors;
  */
 public class LightShopManager implements ShopManager {
 
-  protected final Map<String, SignParser> parsers = new HashMap<>();
+  protected final Map<String, ItemParser> parsers = new HashMap<>();
   protected final Map<UUID, Shop> shops = new HashMap<>();
 
   protected EconomyConnector economyConnector;
@@ -59,7 +59,7 @@ public class LightShopManager implements ShopManager {
    * @return a Map of String keys to SignParser values representing the parsers.
    */
   @Override
-  public Map<String, SignParser> parsers() {
+  public Map<String, ItemParser> parsers() {
 
     return parsers;
   }
