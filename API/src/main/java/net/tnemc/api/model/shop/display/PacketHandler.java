@@ -1,7 +1,7 @@
 package net.tnemc.api.model.shop.display;
 /*
- * QuickShop-Hikari
- * Copyright (C) 2025 Daniel "creatorfromhell" Vidmar
+ * QuickShop-Light
+ * Copyright (C) 2024 Daniel "creatorfromhell" Vidmar
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -26,7 +26,7 @@ import java.util.Optional;
  * @param <T> Is the instance to the packet library's internal API for creating/sending packets.
  *
  * @author creatorfromhell
- * @since 6.2.0.9
+ * @since 0.0.1.0
  */
 public interface PacketHandler<T> {
 
